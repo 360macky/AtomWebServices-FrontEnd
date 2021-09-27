@@ -1,0 +1,7 @@
+body{
+    background: rgb(96,0,232);
+background: linear-gradient(90deg, rgba(96,0,232,1) 0%, rgba(73,4,121,1) 35%, rgba(33,52,214,1) 100%);
+}
+label, small{
+    color: #000000;
+}
