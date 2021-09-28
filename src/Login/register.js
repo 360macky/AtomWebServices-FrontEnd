@@ -1,10 +1,10 @@
-import './style/auth.css'
+import './style/auth.css';
 import backgroundImage from './style/preview.jpg'
 import {Link} from "react-router-dom"
-import Register from "./register"
+
 const public_data = process.env.PUBLIC_URL;
 
-export const Login = () =>{
+export const Register = () =>{
     return (
         <div className="container_box">
             <div className="login_container">
@@ -13,14 +13,16 @@ export const Login = () =>{
                     <img className="img-fluid" src={public_data+"/img/book.png"}/>
                 </div>
                 <div className="login_Right">
-                    <h1>Login</h1>
+                    <h1>Registro de datos</h1>
                     <form>
+                        <input type="text" placeholder="Name"/>
+                        <input type="text" placeholder="Age"/>
                         <input type="text" placeholder="Username"/>
                         <input type="password" placeholder="Password"/>
                         <div className="btn_options">
                             <div className="container_btn_options">
-                                <button className="btn-submit" type="submit">Login</button>
-                                <Link to="/register" className="btn-register">Registro</Link>
+                                <button className="btn-register" type="button">Register</button>
+                                <Link to="/" className="btn-submit">Volver</Link>
                             </div>
                         </div>
                     </form>
@@ -29,4 +31,4 @@ export const Login = () =>{
         </div>
     );
 }
-export default Login
+export default Register

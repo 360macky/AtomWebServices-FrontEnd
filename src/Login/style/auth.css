@@ -1,7 +1,123 @@
-body{
-    background: rgb(96,0,232);
-background: linear-gradient(90deg, rgba(96,0,232,1) 0%, rgba(73,4,121,1) 35%, rgba(33,52,214,1) 100%);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 label, small{
     color: #000000;
+}
+.container_box{
+    background-image: url("https://konecta2.online/assets/image/noImage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_container{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin: 15%;
+    box-shadow: 18px 18px 18px 0 rgba(0,0,0,0.2);
+}
+
+.login_Left, .login_Right{
+    flex: 1;
+}
+
+.login_Left{
+    background-color: rgb(59, 180, 140);
+    padding: 40px;
+    position: relative;
+}
+
+.login_Left h1{
+    color:#ffffff;
+    text-align: center;
+}
+
+.login_Right{
+    padding: 40px;
+    background-color: #1c285f;
+    position: relative;
+}
+
+.login_Right h1{
+    margin-bottom: 30px;
+    color: #bbbbbb;
+    text-align: center;
+}
+
+.login_Right input{
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    background-color: transparent;
+    margin-bottom: 25px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-color: rgb(59, 180, 140);
+    color: rgb(59, 180, 140);
+}
+.login_Right input:active,.login_Right input:focus{
+    outline: none;
+}
+
+.btn-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_btn_options{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+.btn-submit{
+    flex: 1;
+    width: auto;
+    padding:10px;
+    margin:10px;
+    background-color: rgb(59, 180, 140);
+    color: #ffffff;
+    font-size: 16px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    cursor: pointer;
+    border: none;
+    transition-duration: all 0.5 ease;
+}
+
+.btn-submit:hover{
+    padding:10px;
+    margin:10px;
+    background-color: #ffffff;
+    color: rgb(59, 180, 140);
+    font-size: 16px;
+}
+.btn-register{
+    flex: 1;
+    width: auto;
+    padding:10px;
+    margin:10px;
+    background-color: #9340ff;
+    color: #ffffff;
+    font-size: 16px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    cursor: pointer;
+    border: none;
+}
+.btn-register:hover{
+    padding:10px;
+    margin:10px;
+    background-color: #ffffff;
+    color: #9340ff;
+    font-size: 16px;
 }
