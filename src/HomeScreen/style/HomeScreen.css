@@ -1,5 +1,51 @@
 .HomeScreen {
-    background: #00bf8f;
-    background: -webkit-linear-gradient(to bottom, #001510, #00bf8f);
-    background: linear-gradient(to bottom, #001510, #00bf8f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #8360c3; 
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3); 
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+}
+
+.HomeScreen__title {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.HomeScreen__button {
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    transition-property: color;
+    transition-timing-function: ease;
+    transition-duration: 200ms;
+    font-weight: bolder;
+}
+
+.HomeScreen__button:hover {
+    color: #8360c3;
+}
+
+.HomeScreen__products {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    min-width: 800px;
+    min-height: 400px;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 200ms;
+}
+
+.HomeScreen__products:hover {
+    transform: scale(1.01);
 }
