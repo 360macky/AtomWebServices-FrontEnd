@@ -1,5 +1,76 @@
 .ProductScreen {
-    background-color: black;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #8360c3;
+  background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+  background: linear-gradient(to right, #2ebf91, #8360c3);
 }
 
+.ProductScreen__card {
+  background-color: white;
+  min-width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 15px;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: row;
+}
+
+.ProductScreen__image-container {
+  padding: 30px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProductScreen_image {
+  max-width: 250px;
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+
+.ProductScreen_image:hover {
+  transform: scale(1.09) rotate(-10deg);
+}
+
+.ProductScreen__information {
+  background-color: black;
+  min-height: 100%;
+  border-radius: 15px;
+  padding: 40px 40px;
+  color: white;
+  max-width: 350px;
+}
+
+.color-primary {
+  color: #8360c3;
+}
+
+.ProductScreen p {
+  font-size: 1.1rem;
+}
+
+.ProductScreen__button {
+  font-weight: bold;
+  border: 0;
+  outline: none;
+  background-color: #8360c3;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+a {
+    color: unset;
+    text-transform: none;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: unset;
+  }
+  

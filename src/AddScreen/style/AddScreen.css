@@ -1,0 +1,63 @@
+.AddScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #8360c3;
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+}
+
+.AddScreen__form {
+    background-color: white;
+    min-width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 10px;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.AddScreen__form__input {
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #4e4e4e;
+    outline: none;
+    font-size: 1.1rem;
+}
+
+.AddScreen__form__input:focus {
+    border: 2px solid #8360c3;
+}
+
+.AddScreen__label {
+    margin-top: 15px;
+    font-weight: bolder;
+}
+
+.AddScreen__buttons {
+    margin-top: 20px;
+    width: 100%;    
+}
+
+.AddScreen__submit {
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+    color: white;
+    width: 100%;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    outline: none;
+    border-radius: 10px;
+    border: 0;
+    padding: 10px 20px;
+    transition-duration: 300ms;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+
+.AddScreen__submit:hover {
+    transform: scale(1.05);
+}
