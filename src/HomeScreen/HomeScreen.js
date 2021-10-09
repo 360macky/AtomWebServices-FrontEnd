@@ -1,13 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import "./style/HomeScreen.css";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-balham.css";
 import { Redirect, Link } from "react-router-dom";
+import { Button } from "./Button";
 
 export default class HomeScreen extends Component {
   constructor() {
     super();
+
     this.state = {
       columnDefs: [
         { headerName: "ID", field: "_id" },
@@ -54,7 +56,7 @@ export default class HomeScreen extends Component {
           <button className="HomeScreen__button">Inicio</button>
           <button className="HomeScreen__button">Refrescar los datos</button>
           <Link className="HomeScreen__button" to="/add">Agregar producto</Link>
-          <button className="HomeScreen__button">Cerrar sesión</button>
+          <Button />
         </div>
         <div className="HomeScreen__products">
           <div className="table-container">

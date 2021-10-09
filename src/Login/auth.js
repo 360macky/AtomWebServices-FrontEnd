@@ -1,16 +1,17 @@
+import React, { useContext, useState } from 'react'
 import './style/auth.css'
-
-import backgroundImage from './style/preview.jpg'
 import {Link} from "react-router-dom"
-import Register from "./register"
-import * as React from 'react'
 
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
-import ButtonGroup  from '@mui/material/ButtonGroup'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import { makeStyles } from '@mui/styles'
+import { useMutation } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
+
+import { AuthContext } from '../Context/auth';
+import { useForm } from '../hooks/useForm';
 
 const public_data = process.env.PUBLIC_URL;
 
@@ -27,7 +28,52 @@ const useStyle = makeStyles({
     }
 })
 
-export const Login = () =>{
+const LOGIN_USER = gql`
+  mutation login(
+      $email: String! 
+      $password: String!
+    ) {
+    login(
+        email: $email, password: $password
+    ) {
+      id
+      email
+      createdAt
+      token
+    }
+  }
+`;
+
+export const Login = (props) =>{
+
+    const context = useContext(AuthContext);
+
+    if(!context) {
+        props.history.push('/home');
+    }
+
+    const [errors, setErrors] = useState({});
+
+    const { onChange, onSubmit, state } = useForm(loginUserCallback, {
+        email: '',
+        password: '',
+    });
+
+    const [ loginUser, { loading } ] = useMutation(LOGIN_USER, {
+        update(_, {data: {login: userData}}){
+            context.login(userData);
+            props.history.push('/home');
+        },
+        onError(err){
+            setErrors(err.graphQLErrors[0].extensions.exception.errors);
+        },
+        variables: state
+    });
+
+    function loginUserCallback(){
+        loginUser();
+    }
+
     const classes = useStyle()
     return (
         <div className="container_box">
@@ -49,15 +95,15 @@ export const Login = () =>{
                             classes: {
                             input: classes.textField
                         }
-                        }} placeholder="Please enter your username" id="input_user" label="Username" variant="standard" color="success"  />
+                        }} placeholder="Please enter your email" id="input_user" label="Email" variant="standard" color="success" value={state.email} onChange={(e) => onChange(e.target.value, 'email')} />
                         <TextField InputProps={{
                             classes: {
                             input: classes.textField
-                        }}} placeholder="Please enter your password" id="input_pass" type="password" autoComplete="current-password" label="Password" variant="standard" color="success"/>
+                        }}} placeholder="Please enter your password" id="input_pass" type="password" autoComplete="current-password" label="Password" variant="standard" color="success" value={state.password} onChange={(e) => onChange(e.target.value, 'password')} />
                         <div className="btn_options">
                             <div className="container_btn_options">
                                 <Stack spacing={2} direction="row">
-                                    <Button variant="contained" color="success" fullWidth>Login</Button>
+                                    <Button variant="contained" color="success" fullWidth onClick={onSubmit} >Login</Button>
                                     <Button variant="contained" color="info" fullWidth>
                                         <Link className={classes.link} to="/register">
                                             Register
@@ -72,4 +118,4 @@ export const Login = () =>{
         </div>
     );
 }
-export default Login
+export default Login;

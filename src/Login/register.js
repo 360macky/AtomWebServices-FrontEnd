@@ -1,13 +1,13 @@
 import './style/auth.css'
 
-import backgroundImage from './style/preview.jpg'
+//import backgroundImage from './style/preview.jpg'
 import {Link} from "react-router-dom"
-import Login from "./auth"
+//import Login from "./auth"
 import * as React from 'react'
 
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
-import ButtonGroup  from '@mui/material/ButtonGroup'
+//import ButtonGroup  from '@mui/material/ButtonGroup'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import { makeStyles } from '@mui/styles'
@@ -34,7 +34,7 @@ export const Register = () =>{
                 <div className="login_container">
                     <div className="login_Left">
                         <h1>Ingreso a almacén</h1>
-                        <img className="img-fluid" src={public_data+"/img/book.png"}/>
+                        <img className="img-fluid" src={public_data+"/img/book.png"} alt="background-login" />
                     </div>
                     <div className="login_Right">
                         <h1 >Registro</h1>
